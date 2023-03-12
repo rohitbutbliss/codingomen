@@ -1,0 +1,241 @@
+@font-face {
+  font-family: arista-pro;
+  src: url("../../../utilities/font/arista-pro-alternate-regular.ttf");
+}
+
+@font-face {
+  font-family: sf-pro;
+  src: url("../../../utilities/font/sf-pro-display-regular.otf");
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sf-pro;
+  cursor: default;
+  font-size: var(--normal-text);
+}
+
+:root {
+  --main-heading-text: 3rem;
+  --main-heading-spacing: 1rem;
+  --sub-main-heading-text: 2rem;
+  --main-heading-letter-spacing: 0.1rem;
+  --normal-text: 1.2rem;
+  --contest-text: 1rem;
+  --midnightblue: #002247;
+  --selector-color: white;
+}
+
+body {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+#main {
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#overlay.active {
+  display: block;
+  pointer-events: all;
+}
+
+nav {
+  display: grid;
+  place-items: center;
+}
+
+nav > h1 {
+  font-weight: 600;
+  word-spacing: var(--main-heading-spacing);
+  font-size: var(--main-heading-text);
+  letter-spacing: var(--main-heading-letter-spacing);
+}
+
+#arrow-icon {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#custom-select-menu {
+  width: 18%;
+  min-width: 220px;
+  margin: 20px 0;
+  align-self: start;
+}
+
+#select-menu {
+  z-index: 20;
+  position: relative;
+  font-size: var(--normal-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px var(--midnightblue);
+  border-radius: 20px;
+  background-color: var(--selector-color);
+}
+
+#current-option {
+  width: 80%;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+#for-hiding {
+  z-index: 20;
+}
+
+#options {
+  background-color: var(--selector-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: all;
+  margin-top: 10px;
+  max-height: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px var(--midnightblue);
+}
+
+#options.active {
+  border-radius: 10px;
+  overflow: scroll;
+  animation: increaseOptionsHeight 0.2s ease-in-out forwards;
+}
+
+@keyframes increaseOptionsHeight {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 250px;
+  }
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.option.active {
+  display: none;
+}
+
+.option:hover {
+  background-color: rgba(128, 128, 128, 0.469);
+}
+
+#contest-heading {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: var(--sub-main-heading-text);
+}
+
+#contest-heading-arrow {
+  font-size: var(--sub-main-heading-text);
+}
+
+#contest-all {
+  display: grid;
+  font-size: var(--contest-text);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:hover * {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.contest {
+  font-size: var(--contest-text);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 0 5px var(--midnightblue);
+}
+
+@media screen and (max-width: 1024px) {
+  #contest-all {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #custom-select-menu {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  #contest-all {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --main-heading-text: 2rem;
+    --sub-main-heading-text: 1.5rem;
+    --main-heading-spacing: 0.5rem;
+    --main-heading-letter-spacing: 0.01rem;
+    --normal-text: 1rem;
+    --contest-text: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  :root {
+    --main-heading-text: 1.6rem;
+    --sub-main-heading-text: 1.2rem;
+    --normal-text: 0.9rem;
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contest Viewer By Rohit</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <div id="main">
+      <nav>
+        <h1>Contests Finder</h1>
+      </nav>
+      <div id="custom-select-menu">
+        <div id="select-menu">
+          <div id="current-option">All Platforms</div>
+          <ion-icon id="arrow-icon" name="caret-down-outline"></ion-icon>
+        </div>
+        <div id="for-hiding" style="position: relative">
+          <div id="options">
+            <div class="option active">All Platforms</div>
+            <div class="option">LeetCode</div>
+            <div class="option">CodeForces</div>
+            <div class="option">CodeChef</div>
+            <div class="option">HackerRank</div>
+            <div class="option">HackerEarth</div>
+            <div class="option">TopCoder</div>
+            <div class="option">Kick Start</div>
+            <div class="option">AtCoder</div>
+            <div class="option">CS Academy</div>
+          </div>
+        </div>
+      </div>
+      <div id="contests">
+        <div id="contest-heading">
+          Upcoming Contest
+
+          <ion-icon
+            id="contest-heading-arrow"
+            name="caret-down-outline"
+          ></ion-icon>
+        </div>
+        <div id="contest-all"></div>
+      </div>
+    </div>
+    <script src="../script/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
